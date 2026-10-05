@@ -1,0 +1,9 @@
+export { default as ArrowUpRight } from "./arrow-up-right.svg?react";
+export { default as CalendarDots } from "./calendar-dots.svg?react";
+export { default as InstagramLogo } from "./instagram-logo.svg?react";
+export { default as List } from "./list.svg?react";
+export { default as MapPin } from "./map-pin.svg?react";
+export { default as Medal } from "./medal.svg?react";
+export { default as Plant } from "./plant.svg?react";
+export { default as WhatsappLogo } from "./whatsapp-logo.svg?react";
+export { default as X } from "./x.svg?react";

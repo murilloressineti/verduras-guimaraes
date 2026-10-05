@@ -1,28 +1,68 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Satoshi";
+  src: url("./assets/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("./assets/fonts/Satoshi-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("./assets/fonts/Satoshi-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-*: initial;
 
   /* Brand Colors */
+  --color-brand-light: #efeba5;
+  --color-brand-medium: #90ab27;
+  --color-brand-main: #00762b;
+  --color-brand-dark: #003312;
 
   /* Neutral Colors */
   --color-white: #ffffff;
   --color-black: #000000;
 
   /* Text Colors */
-  --color-text-primary: var(--color-black);
-  --color-text-secondary: var(--color-black);
+  --color-text-primary: #001f0b;
   --color-text-inverted: var(--color-white);
 
   /* Background Colors */
+  --color-bg-default: #fafafa;
+  --color-bg-light: var(--color-white);
+  --color-bg-brand: var(--color-green-dark);
+  --color-bg-dark: #182230;
+  --color-bg-darkest: #0c111d;
+
+  /* Border Colors */
+  --color-border-light: #eaecf0;
+  --color-border-default: #d0d5dd;
+  --color-border-dark: #334054;
+  --color-border-strong: #475467;
 
   /* Feedback Colors */
   --color-feedback-danger: #d03e3e;
 
   /* Font Family */
+  --font-sans: "Satoshi", sans-serif;
+  --font-heading: "Raleway", sans-serif;
 }
 
 body {
-  @apply antialiased;
+  @apply font-sans antialiased;
   -webkit-font-smoothing: antialiased;
 }

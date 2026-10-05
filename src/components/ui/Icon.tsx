@@ -10,20 +10,24 @@ export const iconVariants = tv({
       spin: "animate-spin",
       pulse: "animate-pulse",
       bounce: "animate-bounce",
+      "arrow-up-right": "group-hover:-translate-y-0.5 group-hover:translate-x-0.5",
     },
     size: {
-      sm: "size-4",
-      md: "size-4.5",
-      lg: "size-6",
+      sm: "size-5",
+      md: "size-6",
+      lg: "size-8",
     },
     fillColor: {
+      "brand-light": "fill-brand-light",
+      "brand-dark": "fill-brand-dark",
+      black: "fill-black",
       white: "fill-white",
     },
   },
   defaultVariants: {
     animate: "none",
     size: "md",
-    fillColor: "white",
+    fillColor: "brand-light",
   },
 });
 

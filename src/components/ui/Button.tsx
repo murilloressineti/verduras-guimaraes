@@ -6,24 +6,24 @@ import Text from "./Text";
 
 export const buttonVariants = tv({
   base: `
-    group inline-flex cursor-pointer items-center justify-center rounded-lg
+    group inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg
     transition-all duration-300
-    gap-1.5
-    disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2`,
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2
+    disabled:cursor-not-allowed disabled:pointer-events-none disabled:opacity-50
+    `,
   variants: {
     variant: {
-      default: "bg-black",
-      ghost: "bg-transparent",
+      primary: "bg-brand-main hover:bg-brand-dark",
+      secondary: "bg-brand-light hover:bg-brand-light/80 text-brand-dark",
     },
     size: {
-      xs: "p-1",
       sm: "p-2",
-      md: "p-4",
+      md: "px-4 py-4.5",
       lg: "p-6",
     },
   },
   defaultVariants: {
-    variant: "default",
+    variant: "primary",
     size: "md",
   },
 });
@@ -53,7 +53,11 @@ export default function Button({
     >
       {React.Children.map(children, (child) => {
         if (typeof child === "string") {
-          return <Text textColor="inverted">{child}</Text>;
+          return (
+            <Text textColor={variant === "secondary" ? "primary" : "inverted"}>
+              {child}
+            </Text>
+          );
         }
 
         return child;
