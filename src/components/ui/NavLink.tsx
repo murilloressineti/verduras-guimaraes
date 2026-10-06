@@ -24,13 +24,14 @@ export default function NavLink({
         after:bottom-0
         after:left-0
         after:h-px
-        after:w-0
+        after:w-full
         after:bg-brand-main
-        after:transition-all
+        after:opacity-0
+        after:transition-opacity
         after:duration-150
         after:ease-out
 
-        hover:after:w-full
+        hover:after:opacity-100
 
         ${className ?? ""}
       `}

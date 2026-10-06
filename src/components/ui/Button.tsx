@@ -33,7 +33,9 @@ interface ButtonProps
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   as?: React.ElementType;
-  to?: string;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
 export default function Button({
@@ -47,7 +49,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <ButtonComponent
-      type={type}
+      {...(ButtonComponent === "button" && { type })}
       className={buttonVariants({ variant, size, className })}
       {...props}
     >

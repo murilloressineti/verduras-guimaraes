@@ -1,0 +1,131 @@
+import { useState } from "react";
+
+import { Button, Icon, NavLink } from "../ui";
+
+import { ArrowUpRight, List, X } from "../../assets/icons";
+import { Logo } from "../../assets/images";
+
+const navigationLinks = [
+  { label: "Início", href: "#inicio" },
+  { label: "Produtos", href: "#produtos" },
+  { label: "Diferenciais", href: "#diferenciais" },
+  { label: "Quem somos", href: "#quem-somos" },
+  { label: "Contato", href: "#contato" },
+];
+
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <header className="md:rounded-xl bg-bg-default px-4 py-2 md:px-5 md:py-1">
+      <div className="flex items-center justify-between">
+        {/* Logo */}
+        <a href="#inicio" aria-label="Verduras Guimarães - Início">
+          <img src={Logo} alt="Verduras Guimarães" />
+        </a>
+
+        {/* Desktop */}
+        <nav
+          className="hidden items-center md:flex gap-6"
+          aria-label="Navegação principal"
+        >
+          {navigationLinks.map((link) => (
+            <NavLink key={link.href} href={link.href}>
+              {link.label}
+            </NavLink>
+          ))}
+
+          <Button
+            as="a"
+            href="https://wa.me/."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Entrar em contato
+            <Icon
+              svg={ArrowUpRight}
+              fillColor="white"
+              size="sm"
+              animate="arrow-up-right"
+            />
+          </Button>
+        </nav>
+
+        {/* Mobile */}
+        <button
+          type="button"
+          className="relative flex size-11 cursor-pointer items-center justify-center md:hidden"
+          onClick={() => setIsMenuOpen((current) => !current)}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+          aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+        >
+          <span
+            className={`
+              absolute transition-all duration-300 ease-out
+              ${
+                isMenuOpen
+                  ? "rotate-90 scale-50 opacity-0"
+                  : "rotate-0 scale-100 opacity-100"
+              }
+            `}
+          >
+            <Icon svg={List} fillColor="black" />
+          </span>
+
+          <span
+            className={`
+              absolute transition-all duration-300 ease-out
+              ${
+                isMenuOpen
+                  ? "rotate-0 scale-100 opacity-100"
+                  : "-rotate-90 scale-50 opacity-0"
+              }
+            `}
+          >
+            <Icon svg={X} fillColor="black" />
+          </span>
+        </button>
+      </div>
+
+      {/* Menu mobile */}
+      <nav
+        id="mobile-menu"
+        aria-label="Navegação mobile"
+        className={`
+          overflow-hidden transition-all duration-250 ease-out md:hidden
+          ${isMenuOpen ? "max-h-120 opacity-100" : "max-h-0 opacity-0"}
+        `}
+      >
+        <div className="flex flex-col">
+          {navigationLinks.map((link) => (
+            <NavLink
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="justify-center"
+            >
+              {link.label}
+            </NavLink>
+          ))}
+
+          <Button
+            as="a"
+            href="https://wa.me/."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 mb-4"
+          >
+            Entrar em contato
+            <Icon
+              svg={ArrowUpRight}
+              fillColor="white"
+              size="sm"
+              animate="arrow-up-right"
+            />
+          </Button>
+        </div>
+      </nav>
+    </header>
+  );
+}

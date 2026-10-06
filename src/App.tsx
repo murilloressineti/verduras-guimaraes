@@ -1,4 +1,5 @@
 import { Button, Icon, NavLink, ProductImage, Text } from "./components/ui";
+import { Header } from "./components/layout";
 
 import {
   ArrowUpRight,
@@ -119,7 +120,7 @@ export default function App() {
       </div>
 
       {/* ProductImage */}
-      <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-4">
         <ProductImage src={Alface} alt="Alface americana" />
 
         <ProductImage src={RepolhoBranco} alt="Repolho Branco" />
@@ -130,6 +131,9 @@ export default function App() {
 
         <ProductImage src={CouveManteiga} alt="Couve Manteiga" />
       </div>
+
+      {/* Header */}
+      <Header />
     </div>
   );
 }
