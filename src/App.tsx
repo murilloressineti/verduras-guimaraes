@@ -1,4 +1,4 @@
-import { Button, Icon, Text } from "./components/ui";
+import { Button, Icon, NavLink, ProductImage, Text } from "./components/ui";
 
 import {
   ArrowUpRight,
@@ -11,6 +11,13 @@ import {
   WhatsappLogo,
   X,
 } from "./assets/icons";
+import {
+  Alface,
+  AlhoPoro,
+  CouveManteiga,
+  RepolhoBranco,
+  RepolhoRoxo,
+} from "./assets/images";
 
 export default function App() {
   return (
@@ -96,6 +103,32 @@ export default function App() {
             animate="arrow-up-right"
           />
         </Button>
+      </div>
+
+      {/* NavLink */}
+      <div className="bg-white flex gap-2 p-4">
+        <NavLink href="#inicio">Início</NavLink>
+
+        <NavLink href="#produtos">Produtos</NavLink>
+
+        <NavLink href="#diferenciais">Diferenciais</NavLink>
+
+        <NavLink href="#quem-somos">Quem somos</NavLink>
+
+        <NavLink href="#contato">Contato</NavLink>
+      </div>
+
+      {/* ProductImage */}
+      <div className="flex gap-4">
+        <ProductImage src={Alface} alt="Alface americana" />
+
+        <ProductImage src={RepolhoBranco} alt="Repolho Branco" />
+
+        <ProductImage src={RepolhoRoxo} alt="Repolho Roxo" />
+
+        <ProductImage src={AlhoPoro} alt="Alho Poró" />
+
+        <ProductImage src={CouveManteiga} alt="Couve Manteiga" />
       </div>
     </div>
   );

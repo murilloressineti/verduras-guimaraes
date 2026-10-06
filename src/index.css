@@ -62,6 +62,10 @@
   --font-heading: "Raleway", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply font-sans antialiased;
   -webkit-font-smoothing: antialiased;
