@@ -29,6 +29,7 @@ export const textVariants = tv({
       secondary: "text-text-primary/80",
       tertiary: "text-text-primary/60",
       inverted: "text-text-inverted",
+      "inverted-secondary": "text-text-inverted/70",
       "brand-light": "text-brand-light",
       "brand-medium": "text-brand-medium"
     },
