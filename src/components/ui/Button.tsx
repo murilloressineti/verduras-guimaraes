@@ -18,7 +18,7 @@ export const buttonVariants = tv({
     },
     size: {
       sm: "p-2",
-      md: "px-4 py-4.5",
+      md: "p-4",
       lg: "p-6",
     },
   },

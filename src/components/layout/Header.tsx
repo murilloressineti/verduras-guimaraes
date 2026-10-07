@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { WHATSAPP_URL } from "../../constants/links";
+
 import { Button, Icon, NavLink } from "../ui";
 
 import { ArrowUpRight, List, X } from "../../assets/icons";
@@ -17,7 +19,15 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="md:rounded-xl bg-bg-default px-4 py-2 md:px-5 md:py-1">
+    <header
+      className="
+        sticky top-0
+        bg-bg-default px-4 py-2
+
+        md:fixed md:top-4 md:left-10 md:right-10 md:z-50
+        md:rounded-xl md:px-5 md:py-1
+      "
+    >
       <div className="flex items-center justify-between">
         {/* Logo */}
         <a href="#inicio" aria-label="Verduras Guimarães - Início">
@@ -26,7 +36,7 @@ export default function Header() {
 
         {/* Desktop */}
         <nav
-          className="hidden items-center md:flex gap-6"
+          className="hidden items-center gap-6 md:flex"
           aria-label="Navegação principal"
         >
           {navigationLinks.map((link) => (
@@ -37,7 +47,7 @@ export default function Header() {
 
           <Button
             as="a"
-            href="https://wa.me/."
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -111,7 +121,7 @@ export default function Header() {
 
           <Button
             as="a"
-            href="https://wa.me/."
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 mb-4"
