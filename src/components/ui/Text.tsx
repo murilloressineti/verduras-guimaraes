@@ -21,8 +21,7 @@ export const textVariants = tv({
       "heading-sm": "text-3xl",
       "heading-md": "text-4xl",
       "heading-lg": "text-5xl",
-      "heading-xl": "text-[56px]",
-      "heading-xxl": "text-6xl",
+      "heading-xl": "text-6xl",
     },
     textColor: {
       primary: "text-text-primary",

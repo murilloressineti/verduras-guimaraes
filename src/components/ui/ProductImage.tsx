@@ -12,7 +12,7 @@ export default function ProductImage({
   ...props
 }: ProductImageProps) {
   return (
-    <div className="overflow-hidden rounded-2xl w-87.5 h-87.5 md:w-60.75 md:h-66.25">
+    <div className="aspect-square w-full overflow-hidden rounded-2xl">
       <img
         src={src}
         alt={alt}

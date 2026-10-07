@@ -26,7 +26,7 @@ export default function ComponentsPage() {
       {/* Text */}
       <div>
         {/* Headings */}
-        <Text variant="heading" size="heading-xxl" weight="medium">
+        <Text variant="heading" size="heading-xl" weight="medium">
           Direto de quem produz
         </Text>
         <Text variant="heading" size="heading-xl">
