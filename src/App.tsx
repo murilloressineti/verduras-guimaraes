@@ -3,6 +3,7 @@ import {
   HeroSection,
   ProductsSection,
   StatsSection,
+  DifferentialsSection
 } from "./components/sections";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
         <HeroSection />
         <StatsSection />
         <ProductsSection />
+        <DifferentialsSection />
       </main>
     </>
   );

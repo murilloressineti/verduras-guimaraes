@@ -1,3 +1,5 @@
+import { YEARS_IN_BUSINESS } from "../../constants/company";
+
 import { Icon, Text } from "../ui";
 
 import { CalendarDots, Medal, Plant } from "../../assets/icons";
@@ -11,7 +13,7 @@ const stats = [
   },
   {
     icon: Medal,
-    title: "36 anos de mercado",
+    title: `${YEARS_IN_BUSINESS} anos de mercado`,
     description:
       "Três décadas atendendo consumidores, redes e distribuidores em todo o estado.",
   },

@@ -1,3 +1,4 @@
+import { YEARS_IN_BUSINESS } from "../../constants/company";
 import { WHATSAPP_URL } from "../../constants/links";
 
 import { Button, Icon, Text } from "../ui";
@@ -49,7 +50,7 @@ export default function HeroSection() {
             textColor="brand-light"
             weight="medium"
           >
-            Produzindo há 36 anos
+            Produzindo há {YEARS_IN_BUSINESS} anos
           </Text>
 
           <Text

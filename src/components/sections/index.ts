@@ -1,3 +1,4 @@
+export { default as DifferentialsSection } from "./DifferentialsSection";
 export { default as HeroSection } from "./HeroSection";
 export { default as ProductsSection } from "./ProductsSection";
 export { default as StatsSection } from "./StatsSection";
