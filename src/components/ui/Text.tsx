@@ -30,7 +30,8 @@ export const textVariants = tv({
       inverted: "text-text-inverted",
       "inverted-secondary": "text-text-inverted/70",
       "brand-light": "text-brand-light",
-      "brand-medium": "text-brand-medium"
+      "brand-medium": "text-brand-medium",
+      "brand-dark": "text-brand-dark"
     },
     weight: {
       regular: "font-normal",

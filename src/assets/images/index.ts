@@ -1,6 +1,9 @@
 export { default as Alface } from "./alface-americana.webp";
 export { default as AlhoPoro } from "./alho-poro.webp";
+export { default as ContactImage } from "./contact-image.webp";
 export { default as CouveManteiga } from "./couve-manteiga.webp";
+export { default as GridBottom } from "./grid-bottom.png";
+export { default as GridTop } from "./grid-top.png";
 export { default as HeroImage } from "./hero-image.webp";
 export { default as Logo } from "./logo.svg";
 export { default as RepolhoBranco } from "./repolho-branco.webp";

@@ -48,18 +48,18 @@ export default function AboutSection() {
             md:mt-6 md:max-w-7xl md:gap-0
           "
         >
-          <Text size="lg" textColor="primary">
+          <Text size="lg" textColor="secondary">
             Fundada por José Fernandes Guimarães, a Verduras Guimarães nasceu da
             decisão de assumir o controle total da cadeia produtiva.
           </Text>
 
-          <Text size="lg" textColor="primary">
+          <Text size="lg" textColor="secondary">
             Diante das dificuldades de depender de terceiros, José adquiriu um
             módulo na CEAGESP e passou a unir plantio e comercialização em uma
             só operação.
           </Text>
 
-          <Text size="lg" textColor="primary">
+          <Text size="lg" textColor="secondary">
             Há {YEARS_IN_BUSINESS} anos, a empresa acompanha cada etapa, da
             escolha das sementes à entrega final. São mais de 40 toneladas
             comercializadas por dia.

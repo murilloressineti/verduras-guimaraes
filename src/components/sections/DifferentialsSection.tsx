@@ -105,7 +105,7 @@ export default function DifferentialsSection() {
                 {item.title}
               </Text>
 
-              <Text size="lg" textColor="secondary" className="max-w-100">
+              <Text size="lg" textColor="tertiary" className="max-w-120">
                 {item.description}
               </Text>
             </div>
