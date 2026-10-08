@@ -42,11 +42,11 @@ export default function DifferentialsSection() {
         {/* Heading */}
         <div
           className="
-            flex flex-col items-center justify-center
+            flex flex-col items-center justify-center gap-3
             text-center
-            md:items-start md:rounded-2xl md:bg-bg-default
+            md:items-start md:gap-5
+            md:rounded-2xl md:bg-bg-default
             md:px-20 md:py-15 md:text-left
-            gap-3 md:gap-5
           "
         >
           <Text

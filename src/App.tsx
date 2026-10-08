@@ -3,7 +3,9 @@ import {
   HeroSection,
   ProductsSection,
   StatsSection,
-  DifferentialsSection
+  DifferentialsSection,
+  AboutSection,
+  ContactSection
 } from "./components/sections";
 
 export default function App() {
@@ -16,6 +18,10 @@ export default function App() {
         <StatsSection />
         <ProductsSection />
         <DifferentialsSection />
+        <div className="relative isolate overflow-hidden bg-bg-default">
+          <AboutSection />
+          <ContactSection />
+        </div>
       </main>
     </>
   );
