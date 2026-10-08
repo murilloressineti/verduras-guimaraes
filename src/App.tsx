@@ -1,4 +1,4 @@
-import { Header } from "./components/layout";
+import { Header, Footer } from "./components/layout";
 import {
   HeroSection,
   ProductsSection,
@@ -19,6 +19,8 @@ export default function App() {
         <DifferentialsSection />
         <InstitutionalSection />
       </main>
+
+      <Footer />
     </>
   );
 }
