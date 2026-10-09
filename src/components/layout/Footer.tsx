@@ -216,10 +216,18 @@ export default function Footer() {
             md:mt-12 md:pt-12
           "
         >
-          <Text size="sm" textColor="inverted-secondary">
-            © {new Date().getFullYear()} Verduras Guimarães. Todos os direitos
-            reservados.
-          </Text>
+          <div className="flex flex-col items-center gap-2">
+            <Text size="sm" textColor="inverted-secondary">
+              Comércio de Verduras Fernandes Guimarães LTDA
+              <span className="hidden md:inline"> · </span>
+              <br className="md:hidden" />
+              CNPJ: 67.231.498/0001-74
+            </Text>
+
+            <Text size="sm" textColor="inverted-secondary">
+              © {new Date().getFullYear()} · Todos os direitos reservados.
+            </Text>
+          </div>
         </motion.div>
       </div>
     </footer>
