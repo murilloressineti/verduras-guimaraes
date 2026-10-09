@@ -8,7 +8,7 @@ import {
   MapPin,
   WhatsAppLogo,
 } from "../../assets/icons";
-import { LogoAlt } from "../../assets/images";
+import { Logo } from "../../assets/images";
 
 const navigationLinks = [
   { label: "Início", href: "#inicio" },
@@ -41,7 +41,7 @@ export default function Footer() {
           <div>
             <a href="#inicio" aria-label="Voltar ao início">
               <img
-                src={LogoAlt}
+                src={Logo}
                 alt="Verduras Guimarães"
                 className="w-52 md:w-58"
               />

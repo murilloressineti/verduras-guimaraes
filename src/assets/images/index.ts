@@ -5,7 +5,6 @@ export { default as CouveManteiga } from "./couve-manteiga.webp";
 export { default as GridBottom } from "./grid-bottom.png";
 export { default as GridTop } from "./grid-top.png";
 export { default as HeroImage } from "./hero-image.webp";
-export { default as LogoAlt } from "./logo-alt.svg";
 export { default as Logo } from "./logo.svg";
 export { default as RepolhoBranco } from "./repolho-branco.webp";
 export { default as RepolhoRoxo } from "./repolho-roxo.webp";

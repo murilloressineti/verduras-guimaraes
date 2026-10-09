@@ -22,16 +22,16 @@ export default function Header() {
     <header
       className="
         sticky top-0
-        bg-bg-default px-4 py-2
+        bg-bg-default px-4 py-4
 
         md:fixed md:top-4 md:left-10 md:right-10 md:z-50
-        md:rounded-xl md:px-5 md:py-1
+        md:rounded-xl md:px-5
       "
     >
       <div className="flex items-center justify-between">
         {/* Logo */}
         <a href="#inicio" aria-label="Verduras Guimarães - Início">
-          <img src={Logo} alt="Verduras Guimarães" />
+          <img src={Logo} alt="Verduras Guimarães" className="w-36"/>
         </a>
 
         {/* Desktop */}
