@@ -1,3 +1,7 @@
+import { motion, useReducedMotion } from "motion/react";
+
+import { fadeUp, staggerContainer, staggerFast } from "../../lib/motion";
+
 import { WHATSAPP_URL } from "../../constants/links";
 
 import { Button, Icon, ProductImage, Text } from "../ui";
@@ -35,6 +39,9 @@ const products = [
 ];
 
 export default function ProductsSection() {
+  const shouldReduceMotion = useReducedMotion();
+  const animation = shouldReduceMotion ? undefined : fadeUp;
+
   return (
     <section
       id="produtos"
@@ -45,66 +52,114 @@ export default function ProductsSection() {
       "
     >
       {/* Heading */}
-      <div
+      <motion.div
+        variants={staggerContainer}
+        initial={shouldReduceMotion ? false : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
         className="
           flex flex-col items-center gap-8 text-center
           md:flex-row md:items-end md:justify-between md:text-left
         "
       >
         <div>
-          <Text
-            as="span"
-            variant="tagline"
-            size="sm"
-            textColor="brand-light"
-            weight="medium"
-            className="md:text-base"
-          >
-            Produtos
-          </Text>
+          <motion.div variants={animation}>
+            <Text
+              as="span"
+              variant="tagline"
+              size="sm"
+              textColor="brand-light"
+              weight="medium"
+              className="md:text-base"
+            >
+              Produtos
+            </Text>
+          </motion.div>
 
-          <Text
-            as="h2"
-            variant="heading"
-            size="heading-lg"
-            textColor="inverted"
-            className="mx-auto mt-5 max-w-75 md:mx-0 md:mt-6 md:max-w-none"
-          >
-            Frescor que começa {""}
-            <br className="hidden md:block" />
-            na produção
-          </Text>
+          <motion.div variants={animation}>
+            <Text
+              as="h2"
+              variant="heading"
+              size="heading-lg"
+              textColor="inverted"
+              className="mx-auto mt-5 max-w-75 md:mx-0 md:mt-6 md:max-w-none"
+            >
+              Frescor que começa {""}
+              <br className="hidden md:block" />
+              na produção
+            </Text>
+          </motion.div>
         </div>
 
-        <Text
-          size="lg"
-          textColor="inverted-secondary"
-          className="max-w-100 md:text-right"
-        >
-          Cultivamos e entregamos verduras frescas, no volume que o seu negócio
-          precisa.
-        </Text>
-      </div>
+        <motion.div variants={animation}>
+          <Text
+            size="lg"
+            textColor="inverted-secondary"
+            className="max-w-100 md:text-right"
+          >
+            Cultivamos e entregamos verduras frescas, no volume que o seu
+            negócio precisa.
+          </Text>
+        </motion.div>
+      </motion.div>
 
       {/* Products */}
-      <div className="grid grid-cols-1 gap-12 my-16 md:grid-cols-5 md:gap-4 md:my-20">
-        {products.map((product) => (
-          <div key={product.name}>
-            <ProductImage src={product.image} alt={product.name} />
-
-            <Text
-              size="heading-xs"
-              textColor="inverted-secondary"
-              className="mt-2"
+      <div className="my-16 md:my-20">
+        {/* Mobile */}
+        <div className="grid grid-cols-1 gap-12 md:hidden">
+          {products.map((product) => (
+            <motion.div
+              key={product.name}
+              variants={animation}
+              initial={shouldReduceMotion ? false : "hidden"}
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
             >
-              {product.name}
-            </Text>
-          </div>
-        ))}
+              <ProductImage src={product.image} alt={product.name} />
+
+              <Text
+                size="heading-xs"
+                textColor="inverted-secondary"
+                className="mt-2"
+              >
+                {product.name}
+              </Text>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Desktop */}
+        <motion.div
+          variants={staggerFast}
+          initial={shouldReduceMotion ? false : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          className="hidden md:grid md:grid-cols-5 md:gap-4"
+        >
+          {products.map((product) => (
+            <motion.div key={product.name} variants={animation}>
+              <ProductImage src={product.image} alt={product.name} />
+
+              <Text
+                size="heading-xs"
+                textColor="inverted-secondary"
+                className="mt-2"
+              >
+                {product.name}
+              </Text>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
       {/* CTA */}
-      <div className="flex justify-center">
+      <motion.div
+        variants={animation}
+        initial={shouldReduceMotion ? false : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+        className="flex justify-center"
+      >
         <Button
           as="a"
           variant="secondary"
@@ -121,7 +176,7 @@ export default function ProductsSection() {
             animate="arrow-up-right"
           />
         </Button>
-      </div>
+      </motion.div>
     </section>
   );
 }

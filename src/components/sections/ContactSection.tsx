@@ -1,3 +1,13 @@
+import { motion, useReducedMotion } from "motion/react";
+
+import {
+  fadeUp,
+  fadeRight,
+  staggerContainer,
+  ctaPulse,
+  dotReveal,
+} from "../../lib/motion";
+
 import { YEARS_IN_BUSINESS } from "../../constants/company";
 import { WHATSAPP_URL } from "../../constants/links";
 
@@ -13,6 +23,9 @@ const highlights = [
 ];
 
 export default function ContactSection() {
+  const shouldReduceMotion = useReducedMotion();
+  const animation = shouldReduceMotion ? undefined : fadeUp;
+
   return (
     <section
       id="contato"
@@ -31,93 +44,114 @@ export default function ContactSection() {
         "
       >
         {/* Content */}
-        <div
+        <motion.div
+          variants={staggerContainer}
+          initial={shouldReduceMotion ? false : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
           className="
             flex flex-col justify-center
             px-5 pt-10 pb-6
             md:items-start md:px-20 md:py-28
           "
         >
-          <Text
-            as="span"
-            variant="tagline"
-            size="sm"
-            textColor="brand-medium"
-            weight="medium"
-            className="md:text-base mb-4 md:mb-10"
-          >
-            Contato
-          </Text>
+          <motion.div variants={animation}>
+            <Text
+              as="span"
+              variant="tagline"
+              size="sm"
+              textColor="brand-medium"
+              weight="medium"
+              className="md:text-base"
+            >
+              Contato
+            </Text>
+          </motion.div>
 
-          <Text
-            as="h2"
-            variant="heading"
-            size="heading-lg"
-            textColor="primary"
-            className="mb-4 md:mb-10 max-w-120"
-          >
-            Fale direto com quem produz
-          </Text>
+          <motion.div variants={animation}>
+            <Text
+              as="h2"
+              variant="heading"
+              size="heading-lg"
+              textColor="primary"
+              className="mb-4 md:mb-10 mt-4 md:mt-10 max-w-120"
+            >
+              Fale direto com quem produz
+            </Text>
+          </motion.div>
 
-          <Text
-            size="lg"
-            textColor="secondary"
-            className="mb-8 md:mb-10 max-w-130"
-          >
-            Quer consultar produtos, disponibilidade ou fazer um pedido? Entre
-            em contato com nossa equipe.
-          </Text>
+          <motion.div variants={animation}>
+            <Text
+              size="lg"
+              textColor="secondary"
+              className="mb-8 md:mb-10 max-w-130"
+            >
+              Quer consultar produtos, disponibilidade ou fazer um pedido? Entre
+              em contato com nossa equipe.
+            </Text>
+          </motion.div>
 
-          <Text
-            size="lg"
-            textColor="secondary"
-            className="mb-6 md:mb-10 max-w-130"
-          >
-            Atendemos consumidores, supermercados e distribuidores com produção
-            própria e mais de 40 toneladas por dia.
-          </Text>
+          <motion.div variants={animation}>
+            <Text
+              size="lg"
+              textColor="secondary"
+              className="mb-6 md:mb-10 max-w-130"
+            >
+              Atendemos consumidores, supermercados e distribuidores com
+              produção própria e mais de 40 toneladas por dia.
+            </Text>
+          </motion.div>
 
-          <Button
-            as="a"
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* CTA */}
+          <motion.div
+            variants={shouldReduceMotion ? undefined : ctaPulse}
             className="w-full md:w-auto"
           >
-            Chamar no WhatsApp
-            <Icon
-              svg={ArrowUpRight}
-              fillColor="white"
-              size="sm"
-              animate="arrow-up-right"
-            />
-          </Button>
-        </div>
+            <Button
+              as="a"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto"
+            >
+              Chamar no WhatsApp
+              <Icon
+                svg={ArrowUpRight}
+                fillColor="white"
+                size="sm"
+                animate="arrow-up-right"
+              />
+            </Button>
+          </motion.div>
+        </motion.div>
 
-        {/* Image */}
-        <div className="relative min-h-110 md:min-h-150">
+        {/* Image — Mobile */}
+        <motion.div
+          variants={animation}
+          initial={shouldReduceMotion ? false : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="relative min-h-110 md:hidden"
+        >
           <img
             src={ContactImage}
             alt="Verduras Guimarães comercializando verduras na CEAGESP"
             loading="lazy"
-            className="absolute inset-0 size-full object-cover object-left rounded-2xl md:rounded-none"
+            className="absolute inset-0 size-full object-cover object-left rounded-2xl"
           />
 
-          {/* Overlay */}
           <div
             aria-hidden="true"
             className="
-              pointer-events-none absolute inset-0 z-10 rounded-2xl md:rounded-none
+              pointer-events-none absolute inset-0 z-10 rounded-2xl
               bg-[#00731F]/20
             "
           />
 
-          {/* Image label */}
           <div
             className="
               absolute right-3 bottom-3 z-20
-              rounded-full bg-brand-light
-              px-4 py-2
+              rounded-full bg-brand-light px-4 py-2
             "
           >
             <Text
@@ -130,23 +164,75 @@ export default function ContactSection() {
               CEAGESP · Pavilhão MLP, Pedra 90
             </Text>
           </div>
-        </div>
+        </motion.div>
+
+        {/* Image — Desktop */}
+        <motion.div
+          variants={shouldReduceMotion ? undefined : fadeRight}
+          initial={shouldReduceMotion ? false : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          className="relative hidden md:block md:min-h-150"
+        >
+          <img
+            src={ContactImage}
+            alt="Verduras Guimarães comercializando verduras na CEAGESP"
+            loading="lazy"
+            className="absolute inset-0 size-full object-cover object-left"
+          />
+
+          <div
+            aria-hidden="true"
+            className="
+              pointer-events-none absolute inset-0 z-10
+              bg-[#00731F]/20
+            "
+          />
+
+          <div
+            className="
+              absolute right-3 bottom-3 z-20
+              rounded-full bg-brand-light px-4 py-2
+            "
+          >
+            <Text
+              as="span"
+              variant="tagline"
+              size="sm"
+              textColor="brand-dark"
+              weight="medium"
+            >
+              CEAGESP · Pavilhão MLP, Pedra 90
+            </Text>
+          </div>
+        </motion.div>
       </div>
 
       {/* Highlights */}
-      <div
+      <motion.div
+        variants={staggerContainer}
+        initial={shouldReduceMotion ? false : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
         className="
           mt-12 flex flex-wrap
-          items-center justify-center
-          gap-5
+          items-center justify-center gap-5
           md:mt-16
         "
       >
         {highlights.map((highlight) => (
-          <div key={highlight} className="flex items-center gap-3">
-            <span
+          <motion.div
+            key={highlight}
+            variants={animation}
+            className="flex items-center gap-3"
+          >
+            <motion.span
               aria-hidden="true"
-              className="size-2 rounded-full bg-brand-medium"
+              variants={shouldReduceMotion ? undefined : dotReveal}
+              initial={shouldReduceMotion ? false : "hidden"}
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              className="block size-2 shrink-0 rounded-full bg-brand-medium"
             />
 
             <Text
@@ -157,9 +243,9 @@ export default function ContactSection() {
             >
               {highlight}
             </Text>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

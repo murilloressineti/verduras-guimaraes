@@ -9,7 +9,7 @@ import {
   MapPin,
   Medal,
   Plant,
-  WhatsappLogo,
+  WhatsAppLogo,
   X,
 } from "./assets/icons";
 import {
@@ -69,7 +69,7 @@ export default function ComponentsPage() {
         <Icon svg={MapPin} />
         <Icon svg={Medal} />
         <Icon svg={Plant} />
-        <Icon svg={WhatsappLogo} />
+        <Icon svg={WhatsAppLogo} />
         <Icon svg={X} />
       </div>
 

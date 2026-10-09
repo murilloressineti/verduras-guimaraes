@@ -1,3 +1,7 @@
+import { motion, useReducedMotion } from "motion/react";
+
+import { headerEntrance } from "../../lib/motion";
+
 import { useState } from "react";
 
 import { WHATSAPP_URL } from "../../constants/links";
@@ -18,8 +22,13 @@ const navigationLinks = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <header
+    <motion.header
+      variants={shouldReduceMotion ? undefined : headerEntrance}
+      initial={shouldReduceMotion ? false : "hidden"}
+      animate="visible"
       className="
         sticky top-0
         bg-bg-default px-4 py-4
@@ -31,7 +40,7 @@ export default function Header() {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <a href="#inicio" aria-label="Verduras Guimarães - Início">
-          <img src={Logo} alt="Verduras Guimarães" className="w-36"/>
+          <img src={Logo} alt="Verduras Guimarães" className="w-36" />
         </a>
 
         {/* Desktop */}
@@ -136,6 +145,6 @@ export default function Header() {
           </Button>
         </div>
       </nav>
-    </header>
+    </motion.header>
   );
 }

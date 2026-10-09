@@ -1,3 +1,7 @@
+import { motion, useReducedMotion } from "motion/react";
+
+import { fadeUp } from "../../lib/motion";
+
 import { WHATSAPP_URL, INSTAGRAM_URL } from "../../constants/links";
 
 import { Icon, Text } from "../ui";
@@ -21,6 +25,9 @@ const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Av.+Dr.+Gast%C3%A3o+Vidigal%2C+1946%2C+S%C3%A3o+Paulo";
 
 export default function Footer() {
+  const shouldReduceMotion = useReducedMotion();
+  const animation = shouldReduceMotion ? undefined : fadeUp;
+
   return (
     <footer className="bg-bg-default px-2 pt-10 md:px-5 relative z-10 md:z-auto">
       <div
@@ -31,7 +38,11 @@ export default function Footer() {
         "
       >
         {/* Main Content */}
-        <div
+        <motion.div
+          variants={animation}
+          initial={shouldReduceMotion ? false : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
           className="
             flex flex-col gap-8
             md:flex-row md:justify-between md:gap-0
@@ -93,9 +104,7 @@ export default function Footer() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-                  group inline-flex items-center gap-2
-                "
+                className="group inline-flex items-center gap-2"
               >
                 <Icon svg={WhatsAppLogo} size="sm" fillColor="brand-light" />
 
@@ -132,9 +141,7 @@ export default function Footer() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-                  group inline-flex items-start gap-2
-                "
+                className="group inline-flex items-start gap-2"
               >
                 <Icon svg={MapPin} size="sm" fillColor="brand-light" />
 
@@ -173,10 +180,7 @@ export default function Footer() {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-                  group inline-flex items-center gap-2
-
-                "
+                className="group inline-flex items-center gap-2"
               >
                 <Icon svg={InstagramLogo} size="sm" fillColor="brand-light" />
 
@@ -198,10 +202,14 @@ export default function Footer() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Copyright */}
-        <div
+        <motion.div
+          variants={animation}
+          initial={shouldReduceMotion ? false : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
           className="
             mt-8 border-t border-border-dark
             pt-8 text-center
@@ -212,7 +220,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Verduras Guimarães. Todos os direitos
             reservados.
           </Text>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
