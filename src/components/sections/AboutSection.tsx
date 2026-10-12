@@ -16,7 +16,8 @@ export default function AboutSection() {
       className="
         relative z-10
         px-5 py-15
-        md:px-20 md:py-66
+        md:px-10 md:py-50
+        lg:px-20 lg:py-66
       "
     >
       <motion.div

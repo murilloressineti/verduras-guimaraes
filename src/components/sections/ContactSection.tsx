@@ -32,7 +32,7 @@ export default function ContactSection() {
       className="
         relative z-10
         px-3 py-15
-        md:px-20 md:pb-20
+        lg:px-20 lg:pb-20
       "
     >
       {/* Card */}
@@ -40,7 +40,7 @@ export default function ContactSection() {
         className="
           grid grid-cols-1
           overflow-hidden rounded-2xl bg-white
-          md:grid-cols-[55%_45%]
+          lg:grid-cols-[55%_45%]
         "
       >
         {/* Content */}
@@ -52,7 +52,8 @@ export default function ContactSection() {
           className="
             flex flex-col justify-center
             px-5 pt-10 pb-6
-            md:items-start md:px-20 md:py-28
+            md:px-10 md:py-12
+            lg:items-start lg:px-20 lg:py-28
           "
         >
           <motion.div variants={animation}>
@@ -74,7 +75,7 @@ export default function ContactSection() {
               variant="heading"
               size="heading-lg"
               textColor="primary"
-              className="mb-4 md:mb-10 mt-4 md:mt-10 max-w-120"
+              className="mb-4 lg:mb-10 mt-4 lg:mt-10 max-w-120"
             >
               Fale direto com quem produz
             </Text>
@@ -84,7 +85,7 @@ export default function ContactSection() {
             <Text
               size="lg"
               textColor="secondary"
-              className="mb-8 md:mb-10 max-w-130"
+              className="mb-8 lg:mb-10 max-w-130"
             >
               Quer consultar produtos, disponibilidade ou fazer um pedido? Entre
               em contato com nossa equipe.
@@ -95,7 +96,7 @@ export default function ContactSection() {
             <Text
               size="lg"
               textColor="secondary"
-              className="mb-6 md:mb-10 max-w-130"
+              className="mb-6 lg:mb-10 max-w-130"
             >
               Atendemos consumidores, supermercados e distribuidores com
               produção própria e mais de 40 toneladas por dia.
@@ -131,7 +132,7 @@ export default function ContactSection() {
           initial={shouldReduceMotion ? false : "hidden"}
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="relative min-h-110 md:hidden"
+          className="relative min-h-110 lg:hidden"
         >
           <img
             src={ContactImage}
@@ -172,7 +173,7 @@ export default function ContactSection() {
           initial={shouldReduceMotion ? false : "hidden"}
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="relative hidden md:block md:min-h-150"
+          className="relative hidden lg:block lg:min-h-150"
         >
           <img
             src={ContactImage}
@@ -217,7 +218,7 @@ export default function ContactSection() {
         className="
           mt-12 flex flex-wrap
           items-center justify-center gap-5
-          md:mt-16
+          lg:mt-16
         "
       >
         {highlights.map((highlight) => (

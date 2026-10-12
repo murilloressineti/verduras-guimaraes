@@ -33,7 +33,7 @@ export default function StatsSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-brand-dark px-5 py-15 md:px-20 md:py-20">
+    <section className="bg-brand-dark px-5 py-15 lg:px-20 md:py-20">
       <motion.div
         variants={staggerContainer}
         initial={shouldReduceMotion ? false : "hidden"}

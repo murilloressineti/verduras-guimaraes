@@ -41,7 +41,7 @@ export default function DifferentialsSection() {
       id="diferenciais"
       className="
         bg-brand-dark px-3 py-5
-        md:px-5
+        lg:px-5
       "
     >
       <div
@@ -49,8 +49,8 @@ export default function DifferentialsSection() {
           relative isolate
           grid grid-cols-1 gap-20
           rounded-2xl px-5 py-12
-          md:grid-cols-2 md:gap-6
-          md:rounded-none md:p-0
+          lg:grid-cols-2 lg:gap-6
+          lg:rounded-none lg:p-0
         "
       >
         {/* Mobile Background */}
@@ -63,7 +63,7 @@ export default function DifferentialsSection() {
           className="
             pointer-events-none absolute inset-0 -z-10
             rounded-2xl bg-bg-default
-            md:hidden
+            lg:hidden
           "
         />
 
@@ -73,9 +73,9 @@ export default function DifferentialsSection() {
             relative
             flex flex-col items-center justify-center
             text-center
-            md:items-start
-            md:rounded-2xl
-            md:px-20 md:py-15 md:text-left
+            lg:items-start
+            lg:rounded-2xl
+            lg:px-20 lg:py-15 lg:text-left
           "
         >
           {/* Desktop Background */}
@@ -88,7 +88,7 @@ export default function DifferentialsSection() {
             className="
               pointer-events-none absolute inset-0
               hidden rounded-2xl bg-bg-default
-              md:block
+              lg:block
             "
           />
 
@@ -101,7 +101,7 @@ export default function DifferentialsSection() {
             className="
               relative z-10
               flex flex-col items-center gap-3
-              md:items-start md:gap-5
+              lg:items-start lg:gap-5
             "
           >
             <motion.div variants={animation}>
@@ -157,12 +157,12 @@ export default function DifferentialsSection() {
             className="
               pointer-events-none absolute inset-0
               hidden rounded-2xl bg-bg-default
-              md:block
+              lg:block
             "
           />
 
           {/* Mobile */}
-          <div className="relative z-10 flex flex-col gap-12 md:hidden">
+          <div className="relative z-10 flex flex-col gap-12 lg:hidden">
             {differentials.map((item) => (
               <motion.div
                 key={item.number}
@@ -193,7 +193,7 @@ export default function DifferentialsSection() {
             initial={shouldReduceMotion ? false : "hidden"}
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
-            className="relative z-10 hidden md:flex md:flex-col md:gap-8"
+            className="relative z-10 hidden lg:flex md:flex-col lg:gap-8"
           >
             {differentials.map((item) => (
               <motion.div

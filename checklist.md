@@ -1,5 +1,4 @@
 ## Ajustes técnicos
-- [ ] Revisar responsividade no tablet (768px).
 - [ ] Testar navegação por Tab, foco visível e menu por teclado.
 - [ ] Testar preferência por movimento reduzido.
 - [ ] Revisar carregamento das imagens (lazy loading).

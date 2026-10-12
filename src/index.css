@@ -67,7 +67,7 @@ html {
   scroll-padding-top: 300px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   html {
     scroll-padding-top: 100px;
   }

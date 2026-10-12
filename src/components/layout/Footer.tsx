@@ -1,3 +1,4 @@
+
 import { motion, useReducedMotion } from "motion/react";
 
 import { fadeUp } from "../../lib/motion";
@@ -29,12 +30,13 @@ export default function Footer() {
   const animation = shouldReduceMotion ? undefined : fadeUp;
 
   return (
-    <footer className="bg-bg-default px-2 pt-10 md:px-5 relative z-10 md:z-auto">
+    <footer className="relative z-10 bg-bg-default px-2 pt-10 md:px-5 lg:z-auto">
       <div
         className="
           rounded-t-2xl bg-brand-dark
           px-6 pt-12 pb-8
-          md:px-15 md:pt-15 md:pb-10
+          md:px-10 md:pt-15 md:pb-10
+          lg:px-15
         "
       >
         {/* Main Content */}
@@ -45,7 +47,7 @@ export default function Footer() {
           viewport={{ once: true, amount: 0.15 }}
           className="
             flex flex-col gap-8
-            md:flex-row md:justify-between md:gap-0
+            lg:flex-row lg:justify-between lg:gap-0
           "
         >
           {/* Logo */}
@@ -54,7 +56,7 @@ export default function Footer() {
               <img
                 src={Logo}
                 alt="Verduras Guimarães"
-                className="w-52 md:w-58"
+                className="w-52 lg:w-58"
               />
             </a>
           </div>
@@ -70,7 +72,7 @@ export default function Footer() {
               Navegação
             </Text>
 
-            <ul className="flex flex-col gap-4 md:gap-5">
+            <ul className="flex flex-col gap-4 lg:gap-5">
               {navigationLinks.map((link) => (
                 <li key={link.href}>
                   <a href={link.href}>
@@ -88,7 +90,7 @@ export default function Footer() {
           </nav>
 
           {/* Contact Information */}
-          <div className="flex flex-col gap-10 md:gap-14">
+          <div className="flex flex-col gap-10 lg:gap-14">
             {/* WhatsApp */}
             <div>
               <Text

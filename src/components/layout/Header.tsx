@@ -30,11 +30,11 @@ export default function Header() {
       initial={shouldReduceMotion ? false : "hidden"}
       animate="visible"
       className="
-        sticky top-0
+        sticky top-0 lg:z-50
         bg-bg-default px-4 py-4
 
-        md:fixed md:top-4 md:left-10 md:right-10 md:z-50
-        md:rounded-xl md:px-5
+        lg:fixed lg:top-4 lg:right-10 lg:left-10
+        lg:rounded-xl lg:px-5
       "
     >
       <div className="flex items-center justify-between">
@@ -45,7 +45,7 @@ export default function Header() {
 
         {/* Desktop */}
         <nav
-          className="hidden items-center gap-6 md:flex"
+          className="hidden items-center gap-6 lg:flex"
           aria-label="Navegação principal"
         >
           {navigationLinks.map((link) => (
@@ -73,7 +73,7 @@ export default function Header() {
         {/* Mobile */}
         <button
           type="button"
-          className="relative flex size-11 cursor-pointer items-center justify-center md:hidden"
+          className="relative flex size-11 cursor-pointer items-center justify-center lg:hidden"
           onClick={() => setIsMenuOpen((current) => !current)}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
@@ -111,8 +111,9 @@ export default function Header() {
       <nav
         id="mobile-menu"
         aria-label="Navegação mobile"
+        inert={!isMenuOpen}
         className={`
-          overflow-hidden transition-all duration-250 ease-out md:hidden
+          overflow-hidden transition-all duration-250 ease-out lg:hidden
           ${isMenuOpen ? "max-h-120 opacity-100" : "max-h-0 opacity-0"}
         `}
       >

@@ -30,7 +30,8 @@ export default function HeroSection() {
         className="
           relative flex items-center
           min-h-220 overflow-hidden rounded-2xl px-5
-          md:min-h-170 md:px-20
+          md:min-h-170 md:px-10
+          lg:px-20
         "
       >
         {/* Background animado */}
@@ -87,7 +88,7 @@ export default function HeroSection() {
               size="heading-lg"
               textColor="inverted"
               weight="medium"
-              className="md:text-6xl"
+              className="lg:text-6xl"
             >
               Verduras <br className="md:hidden" /> frescas,
               <br />

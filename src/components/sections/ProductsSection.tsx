@@ -48,7 +48,7 @@ export default function ProductsSection() {
       className="
         bg-brand-dark
         px-5 py-15
-        md:px-20 md:py-20
+        lg:px-20 md:py-20
       "
     >
       {/* Heading */}
@@ -59,7 +59,7 @@ export default function ProductsSection() {
         viewport={{ once: true, amount: 0.25 }}
         className="
           flex flex-col items-center gap-8 text-center
-          md:flex-row md:items-end md:justify-between md:text-left
+          lg:flex-row lg:items-end lg:justify-between lg:text-left
         "
       >
         <div>
@@ -95,7 +95,7 @@ export default function ProductsSection() {
           <Text
             size="lg"
             textColor="inverted-secondary"
-            className="max-w-100 md:text-right"
+            className="max-w-100 lg:text-right"
           >
             Cultivamos e entregamos verduras frescas, no volume que o seu
             negócio precisa.
@@ -134,10 +134,17 @@ export default function ProductsSection() {
           initial={shouldReduceMotion ? false : "hidden"}
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
-          className="hidden md:grid md:grid-cols-5 md:gap-4"
+          className="hidden md:grid md:grid-cols-6 md:gap-6 lg:grid-cols-5 lg:gap-4-4"
         >
-          {products.map((product) => (
-            <motion.div key={product.name} variants={animation}>
+          {products.map((product, index) => (
+            <motion.div
+              key={product.name}
+              variants={animation}
+              className={`
+                md:col-span-2 lg:col-span-1
+                ${index === 3 ? "md:col-start-2 lg:col-start-auto" : ""}
+              `}
+            >
               <ProductImage src={product.image} alt={product.name} />
 
               <Text
