@@ -61,7 +61,7 @@
   --font-sans: "Satoshi", sans-serif;
   --font-heading: "Raleway", sans-serif;
 }
-
+    
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 300px;
@@ -76,4 +76,9 @@ html {
 body {
   @apply font-sans antialiased;
   -webkit-font-smoothing: antialiased;
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--color-brand-medium);
+  outline-offset: 4px;
 }

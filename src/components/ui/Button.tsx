@@ -8,7 +8,6 @@ export const buttonVariants = tv({
   base: `
     group inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg
     transition-all duration-300
-    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2
     disabled:cursor-not-allowed disabled:pointer-events-none disabled:opacity-50
     `,
   variants: {

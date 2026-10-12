@@ -9,6 +9,7 @@ export default function InstitutionalSection() {
       <img
         src={GridTop}
         aria-hidden="true"
+        loading="lazy"
         className="
           pointer-events-none absolute
           -top-90 left-0
@@ -21,6 +22,7 @@ export default function InstitutionalSection() {
       <img
         src={GridBottom}
         aria-hidden="true"
+        loading="lazy"
         className="
           pointer-events-none absolute
           top-105 right-0

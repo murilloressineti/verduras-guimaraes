@@ -1,8 +1,3 @@
-## Ajustes técnicos
-- [ ] Testar navegação por Tab, foco visível e menu por teclado.
-- [ ] Testar preferência por movimento reduzido.
-- [ ] Revisar carregamento das imagens (lazy loading).
-
 ## Informações do cliente
 - [ ] Confirmar número oficial do WhatsApp.
 - [ ] Solicitar link oficial do Instagram.
