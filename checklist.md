@@ -1,8 +1,3 @@
-## Informações do cliente
-- [ ] Confirmar número oficial do WhatsApp.
-- [ ] Solicitar link oficial do Instagram.
-- [ ] Confirmar ano de fundação: 1990 ou 1991.
-
 ## Deploy e entrega
 - [ ] Executar npm run build e npm run preview.
 - [ ] Publicar na Vercel ou Cloudflare.
