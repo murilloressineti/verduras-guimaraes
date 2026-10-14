@@ -13,7 +13,7 @@ const stats = [
     icon: Plant,
     title: "Produção 60% a 70% própria",
     description:
-      "Da semente à comercialização, cada etapa passa pela nossa equipe.",
+      "Semeamos, produzimos e comercializamos. Cada etapa passa pela nossa equipe.",
   },
   {
     icon: Medal,

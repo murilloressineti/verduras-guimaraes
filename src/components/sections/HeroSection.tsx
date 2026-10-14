@@ -99,9 +99,9 @@ export default function HeroSection() {
           {/* Description */}
           <motion.div variants={animation}>
             <Text size="lg" textColor="inverted">
-              Da semente à comercialização, cuidamos de todo o processo para
-              entregar verduras frescas, qualidade e condições competitivas para
-              consumidores, supermercados e distribuidores.
+              Cuidamos de todo o processo, da semente à comercialização, para
+              entregar verduras frescas, com qualidade e condições competitivas
+              para consumidores, supermercados e distribuidores.
             </Text>
           </motion.div>
 
