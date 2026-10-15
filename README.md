@@ -23,7 +23,7 @@ Aqui estão as principais tecnologias utilizadas no desenvolvimento deste projet
 
 ## 💻 **Projeto**
 
-Confira abaixo uma prévia e acesse o projeto completo [aqui](https://www.verdurasguimaraes.com.br/):
+Confira abaixo uma prévia e acesse o projeto completo [aqui](https://verdurasguimaraes.com.br/):
 
 <img src="src/assets/images/thumbnail.jpg" alt="Imagem do Projeto Verduras Guimarães" />
 
